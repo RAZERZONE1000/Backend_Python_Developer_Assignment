@@ -1,0 +1,22 @@
+{% extends "employees/base.html" %}
+
+{% block content %}
+
+
+<h2>{{ object.name }}</h2>
+
+<div style="width:400px;">
+	<form action="/employees/former/{{ object.id }}/update/">{% csrf_token %}
+		<div style="float: left; width: 50px"> 
+			<input type='submit' class="button" value='Edit'/>
+		</div>
+	</form>
+    <div style="float: right; width: 250px"> 
+        <form action="/employees/former/{{ object.id }}/delete/">{% csrf_token %}
+			<input type='submit' class="button" value='Delete'/>
+		</form>
+    </div>
+</div>
+
+
+{% endblock %}

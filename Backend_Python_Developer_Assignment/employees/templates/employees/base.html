@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Employees Database</title>
+<style>
+body {
+	padding-top: 70px;
+  	margin-left: auto;
+	margin-right: auto;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.tableFixHead {
+overflow-y: auto; height: 350px;
+}
+.tableFixHead thead th {
+position: sticky; top: 0;
+}
+td {
+	text-align: center;
+}
+td, th {
+	border: 1px solid #808080;
+	padding: 10px
+}
+#t1 th {
+  background-color: teal;
+  color: white;
+}
+#t1 td {
+  background-color: moccasin;
+  color: black;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.navbar li {
+  float: left;
+}
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #4CAF50;
+}
+.button {
+  background-color: #008080;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.center {
+  margin: auto;
+  width: 70%;
+}
+</style>
+</head>	
+<body>
+<div class="center">
+	<div class="navbar">
+		<ul>
+			<li><a href="/employees/">Employees</a></li>
+			<li><a href="/employees/former/">Former Employees</a></li>
+		</ul>
+	</div>
+{% block content %}
+to be replaced...
+{% endblock %}
+</body>
+</div>
+
+</html>

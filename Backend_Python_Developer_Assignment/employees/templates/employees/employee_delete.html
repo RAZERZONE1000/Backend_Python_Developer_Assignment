@@ -1,0 +1,22 @@
+{% extends "employees/base.html" %}
+
+{% block content %}
+
+
+<h2>Delete employee "{{ object.name }}"?</h2>
+
+<div style="width:600px;">
+    <div style="float: left; width: 50px"> 
+        <form method="post" >{% csrf_token %} 
+			<input type='submit' class="button" value='Yes'/> 
+		</form>
+    </div>
+    <div style="float: right; width: 500px"> 
+        <form action='{{ object.get_absolute_url }}'>{% csrf_token %}
+			<input type='submit' class="button" value='No'/> 
+		</form>
+    </div>
+</div>
+
+
+{% endblock %}

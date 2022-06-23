@@ -1,0 +1,55 @@
+{% extends "employees/base.html" %}
+
+{% block content %}
+
+
+<h3>Employees</h3>
+
+<div class="tableFixHead">
+<table id="t1">
+	<thead>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Email adress</th>
+		<th>Phone number</th>
+        <th>Home adress</th>
+        <th>Date of employment</th>
+        <th>Date of birth</th>
+	</tr>
+	</thead>
+	{% for Employee in object_list %}
+		<tr>
+			<td>{{ Employee.id }}</td>
+			<td><a href="/employees/former/{{ Employee.id }}/">{{ Employee.name }}</a></td>
+			<td>{{ Employee.email_adress }}</td>
+            <td>{{ Employee.phone_number }}</td>
+            <td>{{ Employee.home_adress }}</td>
+            <td>{{ Employee.date_of_employment }}</td>
+            <td>{{ Employee.date_of_birth }}</td>
+		</tr>
+	{% endfor %}
+	</tr>
+</table>
+
+<!-- pagination setup -->
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+<!-- pagination setup -->
+
+{% endblock %}

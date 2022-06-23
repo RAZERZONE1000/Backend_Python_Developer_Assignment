@@ -1,0 +1,25 @@
+{% extends "employees/base.html" %}
+
+{% block content %}
+
+
+<h3>Add Employee</h3>
+
+<div style="width:600px;">
+    <form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+		<div style="float: left; width: 50px"> 
+			<input type='submit' class="button" value='Save'/>
+		</div>
+	</form>
+    <div style="float: right; width: 400px"> 
+        <form action="/employees/">
+			{% csrf_token %}
+			<input type='submit' class="button" value='Close'/>
+		</form>
+    </div>
+</div>
+
+
+{% endblock %}
